@@ -20,5 +20,5 @@ def fetch_spells():
     return jsonify(spells)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
     #print(parse(requests.get('https://dnd5e.wikidot.com/spells:wizard').content))
