@@ -20,5 +20,7 @@ def fetch_spells():
     return jsonify(spells)
 
 if __name__ == '__main__':
-    app.run()
-    #print(parse(requests.get('https://dnd5e.wikidot.com/spells:wizard').content))
+    import os
+    port = int(os.environ.get('PORT', 5000))  # Use PORT environment variable or default to 5000
+    app.run(host='0.0.0.0', port=port)
+
