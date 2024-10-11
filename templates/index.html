@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spellbook Builder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1>Spellbook Builder</h1>
+        </header>
+        <main>
+    <!-- D&D Class Selection -->
+    <div class="form-group">
+        <label for="class-select" class="class-label">Select Your D&D Class:</label>
+        <select id="class-select" class="form-control class-select">
+            <option value="">-- Select Class --</option>
+            <option value="artificer">Artificer</option>
+            <option value="ranger">Ranger</option>
+            <option value="wizard">Wizard</option>
+            <option value="sorcerer">Sorcerer</option>
+            <option value="cleric">Cleric</option>
+            <option value="druid">Druid</option>
+            <option value="eldritch-knight">Eldritch Knight</option>
+            <option value="arcane-rogue">Arcane Rogue</option>
+            <option value="paladin">Paladin</option>
+            <option value="bard">Bard</option>
+            <option value="warlock">Warlock</option>
+            <!-- <option value="monk">Monk</option> -->
+        </select>
+    </div>
+            <section id="selected-spells" class="mt-4">
+                <h2>Selected Spells</h2>
+                <ul id="selected-list" class="list-group"></ul>
+                <div>
+                    <button id="create-pdf" class="btn btn-success mt-2">Create PDF</button>
+                    <button id="download-json" class="btn btn-success mt-2">Download JSON</button>
+                    <input type="file" id="upload-json" accept=".json" style="display: none;" />
+                    <label for="upload-json" class="styled-button">Upload JSON</label>
+                </div>
+            </section>
+            <section id="spell-list">
+                <h2>Available Spells</h2>
+                <div id="spells-container" class="row"></div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
